@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Vinayak Dinkar Magdum</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            box-sizing: border-box;
+        }
+
+        header {
+            background-color: #2c2f54;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #2c2f54;
+            padding: 15px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            margin-left: 20px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #ffffff;
+            color: #2c2f54;
+            transform: translateY(-5px);
+        }
+
+        /* Hero Section */
+        .hero {
+            background-color: #2c2f54;
+            color: white;
+            padding: 100px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 600px;
+        }
+
+        .hero img {
+            border-radius: 50%;
+            width: 250px;
+            height: 250px;
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin: 10px 0;
+        }
+
+        .hero p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        /* Education Section */
+        section {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .education {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .degree {
+            background-color: #f4f4f4;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 300px;
+            margin-bottom: 30px;
+        }
+
+        .degree h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .degree p {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Experience Section */
+        .experience {
+            background-color: #f4f4f4;
+            padding: 60px 20px;
+        }
+
+        .experience h2 {
+            margin-bottom: 30px;
+            font-size: 36px;
+        }
+
+        .slider-container {
+            position: relative;
+            width: 80%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .slider {
+            display: flex;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .slide {
+            min-width: 100%;
+            box-sizing: border-box;
+            padding: 30px;
+            background-color: #ffffff;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            margin-right: 20px;
+            border-radius: 8px;
+        }
+
+        .slide h3 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .slide p {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .slide a {
+            display: inline-block;
+            margin-top: 15px;
+            color: #2c2f54;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .slider-buttons {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .slider-buttons button {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        /* Contact Section */
+        .contact {
+            background-color: #f4f4f4;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .contact h2 {
+            margin-bottom: 30px;
+            font-size: 36px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .contact-info div {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 300px;
+            text-align: center;
+        }
+
+        .contact-info img {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background-color: #2c2f54;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .footer-links a {
+            color: white;
+            font-size: 18px;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="#education">Education</a>
+            <a href="#company-projects">Experience</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Vinayak Magdum</h1>
+            <p>A recent graduate from Cardiff University, currently looking for opportunities in Data Analysis and Business Intelligence. I am eager to apply my knowledge and skills to create meaningful changes in the real world.</p>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <h2>Education</h2>
+        <div class="section-container">
+            <div class="section education">
+                <div class="degree">
+                    <h3>Postgraduate</h3>
+                    <p><strong>Msc Data Science and Analytics</strong><br>Cardiff University (2023-2024)</p>
+                    <p>Focus: Data Analysis, Machine Learning, and Business Intelligence,Statistics.</p>
+                </div>
+                <div class="degree">
+                    <h3>Undergraduate</h3>
+                    <p><strong>Bachelor of Science in Computer Science</strong><br>MIT-WPU (2020-2023)</p>
+                    <p>Focus: Programming, databases, and software development,Web Devlopments.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="company-projects" class="experience">
+        <h2>Experience</h2>
+        <div class="slider-container">
+            <div class="slider">
+                <div class="slide">
+                    <h3>PowerBI Sales Dashboard</h3>
+                    <p>Description:This project involves creating an interactive Power BI Sales Dashboard using Global_super_store sales data. The process includes ETL, data cleaning with Power Query, DAX calculations, and creating visualizations with cards, charts, and slicers to provide meaningful insights for easy end-user understanding.</p>
+                    <a href="https://github.com/VinayakMAnalytics/PowerBI-Sales-Dashboard.git" target="_blank">GitHub</a>
+                </div>
+                <div class="slide">
+                    <h3>Power BI Healthcare Analytic Dashboard</h3>
+                    <p>Description:This project focuses on building an interactive and visually insightful Power BI dashboard to analyze healthcare data. The dashboard provides key performance indicators (KPIs), trends, and insights into various aspects of healthcare operations, including patient care, hospital performance, resource allocation, and financial metrics. The dashboard uses data from multiple sources to generate actionable insights for healthcare managers, doctors, and administrators.</p>
+                    <a href="https://github.com/VinayakMAnalytics/Power-BI-Healthcare-Analytic-Dashboard.git" target="_blank">GitHub</a>
+                </div>
+                <div class="slide">
+                    <h3>Netflix Data Insights Dashboard with Power BI</h3>
+                    <p>Description:This project delves into Netflix data to uncover insights about its content library, performance metrics, and audience preferences. Using Power BI, an interactive dashboard was created to visualize key aspects such as genre popularity, regional content distribution, and performance trends.</p>
+                    <a href="https://github.com/VinayakMAnalytics/Netflix-Data-Insights-Dashboard-with-Power-BI.git" target="_blank">GitHub</a>
+                </div>
+                <div class="slide">
+                    <h3>YouTube Trending Videos Analysis with Power BI</h3>
+                    <p>Description:This project analyzes YouTube trending videos data to gain insights on video performance, audience engagement, and publishing trends. Power BI was used to visualize key metrics such as views, likes, dislikes, and comment counts across different countries, channels, and time frames..</p>
+                    <a href="https://github.com/VinayakMAnalytics/YouTube-Trending-Videos-Analysis-with-Power-BI.git" target="_blank">GitHub</a>
+                </div>
+            </div>
+            <div class="slider-buttons">
+                <button class="prev">❮</button>
+                <button class="next">❯</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-links">
+            <a href="https://www.linkedin.com/in/vinayak-magdum62002" target="_blank">LinkedIn</a>
+            <a>Email - vinumagdum114@gmail.com</a>
+            <a>Phone no. - +44-7407763906</a>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const prevButton = document.querySelector('.prev');
+            const nextButton = document.querySelector('.next');
+            const slider = document.querySelector('.slider');
+            let currentIndex = 0;
+            const slides = document.querySelectorAll('.slide');
+            const totalSlides = slides.length;
+
+            function updateSlider() {
+                const offset = -currentIndex * 100;
+                slider.style.transform = `translateX(${offset}%)`;
+            }
+
+            prevButton.addEventListener('click', function() {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                } else {
+                    currentIndex = totalSlides - 1;
+                }
+                updateSlider();
+            });
+
+            nextButton.addEventListener('click', function() {
+                if (currentIndex < totalSlides - 1) {
+                    currentIndex++;
+                } else {
+                    currentIndex = 0;
+                }
+                updateSlider();
+            });
+        });
+    </script>
+</body>
+</html>
